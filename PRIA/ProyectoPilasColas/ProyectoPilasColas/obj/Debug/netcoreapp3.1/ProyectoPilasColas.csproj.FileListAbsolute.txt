@@ -1,0 +1,14 @@
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\bin\Debug\netcoreapp3.1\ProyectoPilasColas.exe
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\bin\Debug\netcoreapp3.1\ProyectoPilasColas.deps.json
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\bin\Debug\netcoreapp3.1\ProyectoPilasColas.runtimeconfig.json
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\bin\Debug\netcoreapp3.1\ProyectoPilasColas.runtimeconfig.dev.json
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\bin\Debug\netcoreapp3.1\ProyectoPilasColas.dll
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\bin\Debug\netcoreapp3.1\ProyectoPilasColas.pdb
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.csproj.AssemblyReference.cache
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.AssemblyInfoInputs.cache
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.AssemblyInfo.cs
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.csproj.CoreCompileInputs.cache
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.dll
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.pdb
+C:\Users\videojuegos\source\repos\ProyectoPilasColas\ProyectoPilasColas\obj\Debug\netcoreapp3.1\ProyectoPilasColas.genruntimeconfig.cache
