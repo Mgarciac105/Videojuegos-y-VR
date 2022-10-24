@@ -9,6 +9,8 @@ public class ControlJugador : MonoBehaviour
     private Rigidbody2D fisica;
     private SpriteRenderer sprite;
     private float alturaCentro;
+    private int dobleJump = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +29,26 @@ public class ControlJugador : MonoBehaviour
         if (entradaX < 0) sprite.flipX = true;
         if (entradaX > 0) sprite.flipX = false;
 
+
         //float entradaSalto = Input.GetAxis("Jump");
         //fisica.AddForce(Vector2.up * (entradaSalto * fuerzaSalto), ForceMode2D.Impulse);
 
-        if (TocarSuelo() && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
         {
-            fisica.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+            if (TocarSuelo())
+            {
+                fisica.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+                dobleJump = 0;
+
+            }
+
+            if (!TocarSuelo() && dobleJump < 1)
+            {
+                fisica.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+                dobleJump++;
+
+            }
+                        
         }
 
         //if( (Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.LeftArrow)))
@@ -44,11 +60,13 @@ public class ControlJugador : MonoBehaviour
 
     private bool TocarSuelo()
     {
-        
+
         RaycastHit2D tocando = Physics2D.Raycast(transform.position + new Vector3(0,-alturaCentro,0), Vector2.down, 0.56f);
         //Debug.DrawRay(transform.position, Vector2.down, Color.red,6f);
         return (tocando.collider != null);
-          
+
+
+
     }
 
 }
