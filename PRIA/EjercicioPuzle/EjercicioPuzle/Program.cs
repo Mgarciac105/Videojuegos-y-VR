@@ -19,14 +19,12 @@ namespace EjercicioPuzle
 
             root.Imprime();
 
-            root.Expandir();
-
-            //MiPuzle puzle = new MiPuzle(root);
-
-            
+            MiPuzle puzle = new MiPuzle(root);
 
             //List<Nodo> solucion = puzle.busquedaAnchura();
- 
+            List<Nodo> solucion = puzle.BusquedaProfundidad();
+
+
         }
     }
 

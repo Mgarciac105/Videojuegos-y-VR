@@ -57,16 +57,7 @@ public class Nodo
             }
         return true;
     }
-    //private void Copiar(int[,] aux2)
-    //{
-    //    for (int i = 0; i < 3; i++)
-    //    {
-    //        for (int j = 0; j < 3; j++)
-    //        {
-    //            this.nodo[i, j] = aux2[i, j];
-    //        }
-    //    }
-    //}
+
     public Boolean EsMismoNodo(int[,] aux)
     {
         bool mismo = true;
@@ -81,6 +72,18 @@ public class Nodo
         return mismo;
     }
     #region miCodigo
+
+    //private void Copiar(int[,] aux2)
+    //{
+    //    for (int i = 0; i < 3; i++)
+    //    {
+    //        for (int j = 0; j < 3; j++)
+    //        {
+    //            this.nodo[i, j] = aux2[i, j];
+    //        }
+    //    }
+    //}
+
     //public void mueveArriba()
     //{
     //    int[,] aux2 = this.nodo;

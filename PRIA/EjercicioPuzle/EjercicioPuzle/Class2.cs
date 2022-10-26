@@ -7,6 +7,8 @@ namespace EjercicioPuzle
     class MiPuzle
     {
         private Nodo root;
+        int cuenta = 0;
+
 
         public MiPuzle(Nodo root)
         {
@@ -38,7 +40,6 @@ namespace EjercicioPuzle
                 {
                     Nodo hijoActual = actual.hijos[i];
 
-                    actual.Imprime();//Pasa por aqui varias veces en el mismo paso
 
                     if (actual.esMeta())
                     {
@@ -46,6 +47,10 @@ namespace EjercicioPuzle
 
                         actual.Imprime();
                         encontrados = true;
+                        Trazo(caminoSolucion, actual);
+
+                        Console.WriteLine($"Numero de pasos: {cuenta}");
+
                         break;
                     }
                     if (!Contiene(abiertos, hijoActual) && !Contiene(cerrados, hijoActual))
@@ -60,6 +65,58 @@ namespace EjercicioPuzle
             return caminoSolucion;
         }
 
+        public List<Nodo> BusquedaProfundidad()
+        {
+
+            List<Nodo> abiertos = new List<Nodo>();//Nodos por visitar
+            List<Nodo> cerrados = new List<Nodo>();//Nodos visitados
+            List<Nodo> caminoSolucion = new List<Nodo>();//Lista de nodos camino a la solucion
+
+            abiertos.Add(root);//nodo actual
+            bool encontrados = false;
+
+            int limite = 50;//limite de pasos
+            int profundidad = 0;//contador de cuanto bajamos
+
+            while (abiertos.Count > 0 && !encontrados)
+            {
+                Nodo actual = abiertos[0];
+                cerrados.Add(actual);
+                abiertos.RemoveAt(0);
+
+                if (actual.esMeta())
+                {
+                    Console.WriteLine("Hemos encontrado la solucion");
+                    encontrados = true;
+                    Trazo(caminoSolucion, actual);
+                }
+
+                if (profundidad < limite)
+                {
+                    actual.Expandir();
+                    profundidad++;
+                    Console.WriteLine($"Profundidad ---> {profundidad}");
+
+                    for (int i = 0; i < actual.hijos.Count; i++)
+                    {
+                        Nodo hijoActual = actual.hijos[i];
+
+                        if (!Contiene(abiertos, hijoActual) && !Contiene(cerrados, hijoActual))
+                        {
+                            abiertos.Insert(0, hijoActual);//metemos al inicio de la lista
+                        }
+                    }
+
+                }
+                else
+                {
+                    profundidad = 0;
+                    actual.hijos.Clear();
+                }
+            }
+            return caminoSolucion;
+
+        }
         public bool Contiene(List<Nodo> lista, Nodo aux)
         {
             bool contiene = false;
@@ -74,6 +131,29 @@ namespace EjercicioPuzle
             }
             return contiene;
         }
+
+        public void Trazo(List<Nodo> camino, Nodo n)
+        {
+
+            Console.WriteLine("Trazando camino");
+
+            Nodo actual = n;
+            camino.Add(actual);
+
+            while (actual.padre != null)
+            {
+                actual = actual.padre;
+                camino.Add(actual);
+            }
+            camino.Reverse();
+
+            for (int i = 0; i < camino.Count; i++)
+            {
+                camino[i].Imprime();
+                cuenta++;
+            }
+        }
     }
+
 
 }
