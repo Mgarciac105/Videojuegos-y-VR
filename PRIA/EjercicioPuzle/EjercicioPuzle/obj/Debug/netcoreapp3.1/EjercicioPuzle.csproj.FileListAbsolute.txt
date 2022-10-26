@@ -26,3 +26,17 @@ C:\Users\videojuegos\Desktop\videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\
 C:\Users\videojuegos\Desktop\videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.dll
 C:\Users\videojuegos\Desktop\videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.pdb
 C:\Users\videojuegos\Desktop\videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.genruntimeconfig.cache
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.csproj.AssemblyReference.cache
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.AssemblyInfoInputs.cache
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.AssemblyInfo.cs
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.csproj.CoreCompileInputs.cache
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.dll
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.exe
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.deps.json
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.runtimeconfig.json
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.runtimeconfig.dev.json
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.dll
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\bin\Debug\netcoreapp3.1\EjercicioPuzle.pdb
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.pdb
+C:\Users\Manu\Desktop\Videojuegos\PRIA\EjercicioPuzle\EjercicioPuzle\obj\Debug\netcoreapp3.1\EjercicioPuzle.genruntimeconfig.cache

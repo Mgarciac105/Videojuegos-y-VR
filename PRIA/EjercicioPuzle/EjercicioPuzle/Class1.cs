@@ -294,8 +294,9 @@ public class Nodo
         MueveDerecha(nodo, fila, columna);
         MueveIzquierda(nodo, fila, columna);
 
-    }//Expandir
 
+    }//Expandir (No se si lo hace)
+    //va de esquina a esquina, del [0,0]  al [0,2], etc. sin hacer pasos intermedios ([0,1])
     #endregion
 
 }

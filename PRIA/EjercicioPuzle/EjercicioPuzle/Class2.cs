@@ -16,15 +16,15 @@ namespace EjercicioPuzle
 
         public List<Nodo> busquedaAnchura()
         {
-            
+
             List<Nodo> abiertos = new List<Nodo>();//Nodos por visitar
             List<Nodo> cerrados = new List<Nodo>();//Nodos visitados
-            List<Nodo> caminoSolucion  = new List<Nodo>();//Lista de nodos camino a la solucion
+            List<Nodo> caminoSolucion = new List<Nodo>();//Lista de nodos camino a la solucion
 
             abiertos.Add(root);//nodo actual
             bool encontrados = false;
-            
-            while(!encontrados && abiertos.Count > 0)
+
+            while (!encontrados && abiertos.Count > 0)
             {
                 Nodo actual = abiertos[0];//Cogemos el primero de la lista
 
@@ -36,9 +36,9 @@ namespace EjercicioPuzle
 
                 for (int i = 0; i < actual.hijos.Count; i++)
                 {
-                    Nodo hijoActual = actual.hijos[0];
+                    Nodo hijoActual = actual.hijos[i];
 
-                    actual.Imprime();
+                    actual.Imprime();//Pasa por aqui varias veces en el mismo paso
 
                     if (actual.esMeta())
                     {
@@ -48,7 +48,7 @@ namespace EjercicioPuzle
                         encontrados = true;
                         break;
                     }
-                    if (!Contiene(abiertos,hijoActual) && !Contiene(cerrados,hijoActual))
+                    if (!Contiene(abiertos, hijoActual) && !Contiene(cerrados, hijoActual))
                     {
                         abiertos.Add(hijoActual);//lo metemos al final de la lista
 
