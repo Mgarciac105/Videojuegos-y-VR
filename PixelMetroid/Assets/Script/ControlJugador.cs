@@ -89,7 +89,7 @@ public class ControlJugador : MonoBehaviour
 
     public void SiguienteNivel()
     {
-
+        SceneManager.LoadScene(SceneManager.GetSceneAt(0).buildIndex);
     }
 }
 
