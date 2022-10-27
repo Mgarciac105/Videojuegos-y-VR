@@ -29,7 +29,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void MoverPlataforma()
@@ -51,3 +51,5 @@ public class NewBehaviourScript : MonoBehaviour
 
 
         }
+    }
+}
