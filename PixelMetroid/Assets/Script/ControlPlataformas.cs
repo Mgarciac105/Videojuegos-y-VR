@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ControlPlataformas : MonoBehaviour
 {
-    public float velocidad;
+    // Start is called before the first frame update
+   public float velocidad;
     public Vector3 posicionFin;
 
 
     private Vector3 posicionInicio;
     private bool movimientoHaciaFin;
 
-    private SpriteRenderer sprite;
 
 
 
@@ -19,7 +19,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
 
         posicionInicio = transform.position;
@@ -30,6 +29,8 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
 
+        MoverPlataforma();
+        
     }
 
     private void MoverPlataforma()
@@ -40,16 +41,14 @@ public class NewBehaviourScript : MonoBehaviour
         if (transform.position == posicionFin)
         {
             movimientoHaciaFin = false;
-            sprite.flipX = true;
 
         }
 
         if (transform.position == posicionInicio)
         {
-            sprite.flipX = false;
             movimientoHaciaFin = true;
-
 
         }
     }
+    
 }
