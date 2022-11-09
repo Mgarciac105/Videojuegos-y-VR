@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
+using System.Linq;
+
 namespace EjercicioPuzle
 {
     class MiPuzle
@@ -51,7 +53,8 @@ namespace EjercicioPuzle
 
                         Console.WriteLine($"Numero de pasos: {cuenta}");
 
-                        break;
+                        return caminoSolucion;
+
                     }
                     if (!Contiene(abiertos, hijoActual) && !Contiene(cerrados, hijoActual))
                     {
@@ -117,6 +120,47 @@ namespace EjercicioPuzle
             return caminoSolucion;
 
         }
+        
+        public List<Nodo> BuscaAsterisco()
+        {
+            List<Nodo> abiertos = new List<Nodo>();
+            List<Nodo> cerrados = new List<Nodo>();
+            List<Nodo> caminoSolucion = new List<Nodo>();
+
+            abiertos.Add(root);
+            bool encontrado = false;
+
+            while(abiertos.Count > 0 && !encontrado)
+            {
+                Nodo actual = abiertos[0];
+                cerrados.Add(actual);
+                abiertos.RemoveAt(0);
+
+                actual.Expandir();
+
+                for (int i = 0; i < actual.hijos.Count; i++)
+                {
+                    Nodo hijoActual = actual.hijos[i];
+                    if (actual.esMeta())
+                    {
+                        Console.WriteLine("Hemos encontrado la solucion");
+                        encontrado = true;
+                        Trazo(caminoSolucion, actual);
+                        break;
+                    }
+                    if(!Contiene(abiertos,hijoActual) && !Contiene(cerrados, hijoActual))
+                    {
+                        abiertos.Add(hijoActual);
+                    }
+                }
+                abiertos = abiertos.OrderBy(x => x.malColocadas).ToList();
+
+            }
+
+            return caminoSolucion;
+
+        }
+
         public bool Contiene(List<Nodo> lista, Nodo aux)
         {
             bool contiene = false;

@@ -7,14 +7,19 @@ public class Nodo
     public int[,] nodo = new int[3,3];
     public List<Nodo> hijos = new List<Nodo>();
     public Nodo padre;
+    public int malColocadas= 0;
     public  Nodo(int[,] aux)
         {
-            for (int i = 0; i<3; i++)
-			    for (int j = 0; j<3; j++)
-			            this.nodo[i,j]=aux[i,j];
-			
-			
+
+        SetPuzzle(aux);
+        this.CalculoMalColocadas();
 		}
+    public void SetPuzzle(int[,] aux)
+    {
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                this.nodo[i, j] = aux[i, j];
+    }
     public void Inicializa(int[,] nodo)
     {
 
@@ -300,6 +305,17 @@ public class Nodo
 
     }//Expandir (No se si lo hace)
     //va de esquina a esquina, del [0,0]  al [0,2], etc. sin hacer pasos intermedios ([0,1])
+
+    public void CalculoMalColocadas()
+    {
+        int indice = 0;
+        for (int x = 0; x < 3; x++)
+            for (int y = 0; y < 3; y++)
+            {
+                if (nodo[x, y] != indice) this.malColocadas++;
+                indice++;
+            }
+    }
     #endregion
 
 }

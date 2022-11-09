@@ -11,8 +11,8 @@ namespace EjercicioPuzle
     {
         static void Main(string[] args)
         {
-            int[,] inicial = { { 1,2,4} ,
-                               {3,0,5},
+            int[,] inicial = { { 1,2,5} ,
+                               {3,0,4},
                                {7,6,8 }};
 
             Nodo root = new Nodo(inicial);
@@ -21,9 +21,9 @@ namespace EjercicioPuzle
 
             MiPuzle puzle = new MiPuzle(root);
 
-            //List<Nodo> solucion = puzle.busquedaAnchura();
-            List<Nodo> solucion = puzle.BusquedaProfundidad();
-
+            List<Nodo> solucion = puzle.busquedaAnchura();
+            //List<Nodo> solucion = puzle.BusquedaProfundidad();
+            //List<Nodo> solucion = puzle.BuscaAsterisco();
 
         }
     }
