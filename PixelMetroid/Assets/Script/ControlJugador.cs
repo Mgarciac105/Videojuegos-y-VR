@@ -12,7 +12,8 @@ public class ControlJugador : MonoBehaviour
     private SpriteRenderer sprite;
     private float alturaCentro;
     private bool dobleJump = false;
-
+    private Animator animacion;
+    private int puntuacion;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,14 @@ public class ControlJugador : MonoBehaviour
         fisica = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         alturaCentro = GetComponent<CapsuleCollider2D>().size.y / 2 - GetComponent<CapsuleCollider2D>().offset.y;
+        animacion = GetComponent<Animator>();
+        puntuacion = 0;
+
+    }
+    
+    public void IncrementarPuntuacion()
+    {
+        puntuacion++;
     }
 
     // Update is called once per frame
