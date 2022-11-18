@@ -12,7 +12,7 @@ public class ControlEnemigo : MonoBehaviour
     private bool movimientoHaciaFin;
 
     private SpriteRenderer sprite;
-
+    private Animator animacion;
 
 
 
@@ -20,7 +20,7 @@ public class ControlEnemigo : MonoBehaviour
     void Start()
     {
         sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
+        animacion = transform.GetChild(0).GetComponent<Animator>();
 
         posicionInicio = transform.position;
         movimientoHaciaFin = true;
@@ -42,14 +42,28 @@ public class ControlEnemigo : MonoBehaviour
         if (transform.position == posicionFin)
         {
             movimientoHaciaFin = false;
+
+            if(sprite.flipX == true)
+            {
+                sprite.flipX = false;
+
+            }else
             sprite.flipX = true;
 
         }
 
         if (transform.position == posicionInicio)
         {
-            sprite.flipX = false;
+
             movimientoHaciaFin = true;
+
+            if (sprite.flipX == false)
+            {
+                sprite.flipX = true;
+
+            }
+            else
+                sprite.flipX = false;
 
         }
     }

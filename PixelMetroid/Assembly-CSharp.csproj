@@ -58,10 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Script\ControlPlataformas.cs" />
     <Compile Include="Assets\Script\ControlEnemigo.cs" />
+    <Compile Include="Assets\Script\EfectoParallax.cs" />
     <Compile Include="Assets\Script\SiguienteNivel.cs" />
     <Compile Include="Assets\Script\ControlJugador.cs" />
     <Compile Include="Assets\Script\CambioNivel.cs" />
-    <Compile Include="Assets\Script\EfectoParallax.cs" />
+    <Compile Include="Assets\Script\TriggerMovimiento.cs" />
+    <Compile Include="Assets\Script\TriggerPowerUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
