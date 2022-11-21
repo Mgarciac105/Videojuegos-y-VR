@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "eg+dnYwyVR2SjM/bMRo+cDVLuwBahg0YA+5cBZGxKPTrtp3KBxgs0lchHpGs8RIHbPlrmGkzHdJ91DOtNdAO9w==",
+  "dgSpecHash": "2aI49j1WkFjeZmxf0M/+GxoKL+RrKQUJeNgSmtWdaN7FdUOCzVBxFoImPU1UkATPFyK09f5tdXJOAnvzm8OMWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\videojuegos\\Desktop\\videojuegos\\PRIA\\EjercicioPuzle\\EjercicioPuzle\\EjercicioPuzle.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Manu\\Desktop\\Videojuegos\\PRIA\\EjercicioPuzle\\EjercicioPuzle\\EjercicioPuzle.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Manu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.30\\microsoft.netcore.app.host.win-x64.3.1.30.nupkg.sha512",
+    "C:\\Users\\Manu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Manu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Manu\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
