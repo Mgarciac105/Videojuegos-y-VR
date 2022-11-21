@@ -18,8 +18,7 @@ public class TriggerMovimiento : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
-            collision.gameObject.GetComponent<ControlJugador>().IncrementarPuntuacion();
+            collision.transform.parent = null;
 
         }
     }

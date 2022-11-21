@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class TriggerPowerUp : MonoBehaviour
 {
+    public int puntuacion;
+
+    private ControlJugador scriptJugador;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent = transform;
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+            scriptJugador = collision.gameObject.GetComponent<ControlJugador>();
 
-            collision.transform.parent = null;
+            this.gameObject.SetActive(false);
+            Destroy(gameObject);
 
-        }
+            scriptJugador.contarPowerUps();
+       }
     }
 }
