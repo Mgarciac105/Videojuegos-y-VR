@@ -71,7 +71,15 @@ public class ControlEnemigo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<ControlJugador>().FinJuego();
+            collision.gameObject.GetComponent<ControlJugador>().QuitarVida();
+
+            this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+            Invoke("VolverCollider", 1f);
         }
+    }
+
+    private void VolverCollider()
+    {
+        this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = false;
     }
 }
