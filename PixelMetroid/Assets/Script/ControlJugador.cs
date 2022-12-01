@@ -1,27 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour
 {
     public float velocidad;
     public float fuerzaSalto;
-    public int nVidas;
-    public int tiempoNivel;
    
     private Rigidbody2D fisica;
     private SpriteRenderer sprite;
     private float alturaCentro;
     private bool dobleJump = false;
     private Animator animacion;
-    private int puntuacion;
     private bool esInvulnerable;
-    private float tiempoInicio;
-    private int tiempoEmpleado;
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -31,17 +22,11 @@ public class ControlJugador : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         alturaCentro = GetComponent<CapsuleCollider2D>().size.y / 2 - GetComponent<CapsuleCollider2D>().offset.y;
         animacion = GetComponent<Animator>();
-        puntuacion = 0;
         esInvulnerable = false;
-        tiempoInicio = Time.time;
 
     }
     
 
-    public int getPuntuacion()
-    {
-        return puntuacion;
-    }
 
     // Update is called once per frame
     void Update()
@@ -53,7 +38,6 @@ public class ControlJugador : MonoBehaviour
 
         animarJugador();
 
-        tiempoPartida();
 
     }
 
@@ -113,56 +97,22 @@ public class ControlJugador : MonoBehaviour
         else if ((fisica.velocity.x < -0.5) || (fisica.velocity.x > 0.5)) animacion.Play("JugadorCorriendo");
         else animacion.Play("JugadorParado");
     }
-    public void QuitarVida()
-    {
-        if (!esInvulnerable)
-        {
-            nVidas--;
-            esInvulnerable = true;
-
-        }
-        if (nVidas == 0)
-        {
-            Debug.Log("Muerto");
-            FinJuego();
-        }
-        Invoke("HacerVulnerable", 1f);
-        sprite.color = Color.red;
-
-    }
+ 
     
-    private void HacerVulnerable()
+    public  void HacerVulnerable()
     {
         esInvulnerable = false;
         sprite.color = Color.white;
     }
-
-    private void tiempoPartida()
+   
+    public void HacerInvulnerable()
     {
-        tiempoEmpleado = (int)(Time.time - tiempoInicio);
-
-        if (tiempoEmpleado > tiempoNivel) FinJuego();
+        esInvulnerable = true;
+        sprite.color = Color.red;
     }
-
-    public void contarPowerUps()
+    public bool EsInvulnerable()
     {
-        if (GameObject.FindGameObjectsWithTag("PowerUp").Length == 0) ganarJuego();
-    }
-
-    private void ganarJuego()
-    {
-        puntuacion = (nVidas * 100) + (tiempoNivel - tiempoEmpleado);
-        Debug.Log("Has ganado");
-    }
-
-    public void FinJuego()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void SiguienteNivel()
-    {
-        SceneManager.LoadScene(SceneManager.GetSceneAt(0).buildIndex);
+        return esInvulnerable;
     }
 }
 

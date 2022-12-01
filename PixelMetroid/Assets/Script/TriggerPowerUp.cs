@@ -6,19 +6,24 @@ public class TriggerPowerUp : MonoBehaviour
 {
     public int puntuacion;
 
-    private ControlJugador scriptJugador;
+    private ControlDatosJuego scriptControlJuego;
     // Start is called before the first frame update
+
+    public void Start()
+    {
+        scriptControlJuego = GameObject.Find("DatosJuego").GetComponent<ControlDatosJuego>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            scriptJugador = collision.gameObject.GetComponent<ControlJugador>();
+            scriptControlJuego = collision.gameObject.GetComponent<ControlDatosJuego>();
 
             this.gameObject.SetActive(false);
             Destroy(gameObject);
 
-            scriptJugador.contarPowerUps();
+           //scriptJugador.contarPowerUps();
        }
     }
 }
