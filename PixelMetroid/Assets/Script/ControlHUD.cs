@@ -10,13 +10,16 @@ public class ControlHUD : MonoBehaviour
     private TextMeshProUGUI textoNPowerUps;
     private TextMeshProUGUI textoTiempo;
 
-
+    private void Awake()
+    {
+        textoNVidas = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        textoNPowerUps = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        textoTiempo = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        textoNVidas= transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        textoNPowerUps= transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        textoTiempo= transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+
 
     }
 

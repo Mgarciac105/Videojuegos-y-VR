@@ -14,7 +14,22 @@ public class ControlDatosJuego : MonoBehaviour
     private float tiempoInicio;
     private int tiempoEmpleado;
     private int puntuacion;
+    private bool hasGanado;
 
+
+    private void Awake()
+    {
+        int numInstancias = FindObjectsOfType<ControlDatosJuego>().Length;
+
+        if(numInstancias != 1)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +39,7 @@ public class ControlDatosJuego : MonoBehaviour
         scriptHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
 
         scriptHUD.setVidasHUD(nVidas.ToString());
-        scriptHUD.setNPowerUps(GameObject.FindGameObjectsWithTag("PowerUps").Length.ToString());
+        scriptHUD.setNPowerUps(GameObject.FindGameObjectsWithTag("PowerUp").Length.ToString());
         scriptHUD.setTiempo(tiempoNivel);
 
         Invoke("ModificarTiempo", 1f);
@@ -55,10 +70,12 @@ public class ControlDatosJuego : MonoBehaviour
         if (tiempoEmpleado > tiempoNivel) FinJuego();
     }
 
-    //public void ModificarTiempo()
-    //{
+    public void ModificarTiempo()
+    {
+        scriptHUD.setTiempo(tiempoNivel - tiempoEmpleado);
+        Invoke("ModificarTiempo", 1f);
 
-    //}
+    }
 
     public void contarPowerUps()
     {
@@ -72,11 +89,15 @@ public class ControlDatosJuego : MonoBehaviour
     {
         puntuacion = (nVidas * 100) + (tiempoNivel - tiempoEmpleado);
         Debug.Log("Has ganado");
+
+        hasGanado = true;
+        SceneManager.LoadScene("FinNivel");
     }
 
     public void FinJuego()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        hasGanado = false;
+        SceneManager.LoadScene("FinNivel");
     }
 
     //public void SiguienteNivel()

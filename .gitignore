@@ -13,7 +13,7 @@
 **/[Ll]ogs/
 **/[Uu]ser[Ss]ettings/
 
-/RVRA/Libro/
+/RVRA/[Ll]ibro/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -50,7 +50,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 .pdf
-
+.rar
 
 
 # Unity3D generated meta files
