@@ -6,13 +6,15 @@ public class ControlJugador : MonoBehaviour
 {
     public float velocidad;
     public float fuerzaSalto;
-   
+    public Sprite duck;
+
     private Rigidbody2D fisica;
     private SpriteRenderer sprite;
     private float alturaCentro;
     private bool dobleJump = false;
     private Animator animacion;
     private bool esInvulnerable;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class ControlJugador : MonoBehaviour
         alturaCentro = GetComponent<CapsuleCollider2D>().size.y / 2 - GetComponent<CapsuleCollider2D>().offset.y;
         animacion = GetComponent<Animator>();
         esInvulnerable = false;
+
 
     }
     
@@ -36,16 +39,35 @@ public class ControlJugador : MonoBehaviour
 
         saltarJugador();
 
-        animarJugador();
+        agacharJugador();
 
+        animarJugador();
 
     }
 
+    private void agacharJugador()
+    {
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (tocarSuelo())
+            {
+                animacion.enabled = false;
+                sprite.sprite = duck;
+
+            }
+        }
+        else animacion.enabled = true;
+
+        //float entradaSalto = Input.GetAxis("Jump");
+        //fisica.AddForce(Vector2.up * (entradaSalto * fuerzaSalto), ForceMode2D.Impulse);
+
+    }
     private void correrJugador()
     {
         float entradaX = Input.GetAxis("Horizontal");
         fisica.velocity = new Vector2(entradaX * velocidad, fisica.velocity.y);
-        
+
 
 
         if (entradaX < 0) sprite.flipX = true;
@@ -72,7 +94,6 @@ public class ControlJugador : MonoBehaviour
             {
                 fisica.AddForce(Vector2.up * (fuerzaSalto * 60) / 100, ForceMode2D.Impulse);
                 dobleJump = true;
-
             }
 
         }
@@ -91,12 +112,17 @@ public class ControlJugador : MonoBehaviour
 
     }
 
+    
     private void animarJugador()
     {
-        if (!tocarSuelo()) animacion.Play("JugadorSalto");
-        else if ((fisica.velocity.x < -0.5) || (fisica.velocity.x > 0.5)) animacion.Play("JugadorCorriendo");
-        else animacion.Play("JugadorParado");
+        if (animacion.enabled == true)
+        {
+            if (!tocarSuelo()) animacion.Play("JugadorSalto");
+            else if ((fisica.velocity.x < -0.5) || (fisica.velocity.x > 0.5)) animacion.Play("JugadorCorriendo");
+            else animacion.Play("JugadorParado");
+        }
     }
+ 
  
     
     public  void HacerVulnerable()
