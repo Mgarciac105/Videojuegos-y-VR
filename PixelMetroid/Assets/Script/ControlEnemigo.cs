@@ -6,11 +6,12 @@ public class ControlEnemigo : MonoBehaviour
 {
     public float velocidad;
     public Vector3 posicionFin;
+    public GameObject cangrejo;
 
 
     private Vector3 posicionInicio;
     private bool movimientoHaciaFin;
-
+    private ControlDatosJuego controlDatosJuego;
     private SpriteRenderer sprite;
     private Animator animacion;
 
@@ -21,9 +22,9 @@ public class ControlEnemigo : MonoBehaviour
     {
         sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         animacion = transform.GetChild(0).GetComponent<Animator>();
-
         posicionInicio = transform.position;
         movimientoHaciaFin = true;
+        controlDatosJuego = GameObject.Find("DatosJuego").GetComponent<ControlDatosJuego>();
     }
 
     // Update is called once per frame
@@ -71,8 +72,7 @@ public class ControlEnemigo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<ControlJugador>().QuitarVida();
-
+            controlDatosJuego.QuitarVida();
             this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
             Invoke("VolverCollider", 1f);
         }

@@ -13,6 +13,7 @@
 **/[Ll]ogs/
 **/[Uu]ser[Ss]ettings/
 
+RVRA/Libro/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -50,6 +51,8 @@ ExportedObj/
 *.VC.db
 .pdf
 
+
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
@@ -74,4 +77,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+/RVRA/Libro
 # End of https://www.toptal.com/developers/gitignore/api/unity

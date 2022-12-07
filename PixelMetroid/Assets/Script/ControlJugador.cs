@@ -1,26 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour
 {
     public float velocidad;
     public float fuerzaSalto;
-    public int nVidas;
-    public int tiempoNivel;
-   
+    public Sprite duck;
+
     private Rigidbody2D fisica;
     private SpriteRenderer sprite;
     private float alturaCentro;
     private bool dobleJump = false;
     private Animator animacion;
-    private int puntuacion;
     private bool esInvulnerable;
-    private float tiempoInicio;
-    private int tiempoEmpleado;
-
-
 
 
     // Start is called before the first frame update
@@ -31,17 +24,12 @@ public class ControlJugador : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         alturaCentro = GetComponent<CapsuleCollider2D>().size.y / 2 - GetComponent<CapsuleCollider2D>().offset.y;
         animacion = GetComponent<Animator>();
-        puntuacion = 0;
         esInvulnerable = false;
-        tiempoInicio = Time.time;
+
 
     }
     
 
-    public int getPuntuacion()
-    {
-        return puntuacion;
-    }
 
     // Update is called once per frame
     void Update()
@@ -51,17 +39,35 @@ public class ControlJugador : MonoBehaviour
 
         saltarJugador();
 
-        animarJugador();
+        agacharJugador();
 
-        tiempoPartida();
+        animarJugador();
 
     }
 
+    private void agacharJugador()
+    {
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (tocarSuelo())
+            {
+                animacion.enabled = false;
+                sprite.sprite = duck;
+
+            }
+        }
+        else animacion.enabled = true;
+
+        //float entradaSalto = Input.GetAxis("Jump");
+        //fisica.AddForce(Vector2.up * (entradaSalto * fuerzaSalto), ForceMode2D.Impulse);
+
+    }
     private void correrJugador()
     {
         float entradaX = Input.GetAxis("Horizontal");
         fisica.velocity = new Vector2(entradaX * velocidad, fisica.velocity.y);
-        
+
 
 
         if (entradaX < 0) sprite.flipX = true;
@@ -88,7 +94,6 @@ public class ControlJugador : MonoBehaviour
             {
                 fisica.AddForce(Vector2.up * (fuerzaSalto * 60) / 100, ForceMode2D.Impulse);
                 dobleJump = true;
-
             }
 
         }
@@ -107,62 +112,33 @@ public class ControlJugador : MonoBehaviour
 
     }
 
+    
     private void animarJugador()
     {
-        if (!tocarSuelo()) animacion.Play("JugadorSalto");
-        else if ((fisica.velocity.x < -0.5) || (fisica.velocity.x > 0.5)) animacion.Play("JugadorCorriendo");
-        else animacion.Play("JugadorParado");
-    }
-    public void QuitarVida()
-    {
-        if (!esInvulnerable)
+        if (animacion.enabled == true)
         {
-            nVidas--;
-            esInvulnerable = true;
-
+            if (!tocarSuelo()) animacion.Play("JugadorSalto");
+            else if ((fisica.velocity.x < -0.5) || (fisica.velocity.x > 0.5)) animacion.Play("JugadorCorriendo");
+            else animacion.Play("JugadorParado");
         }
-        if (nVidas == 0)
-        {
-            Debug.Log("Muerto");
-            FinJuego();
-        }
-        Invoke("HacerVulnerable", 1f);
-        sprite.color = Color.red;
-
     }
+ 
+ 
     
-    private void HacerVulnerable()
+    public  void HacerVulnerable()
     {
         esInvulnerable = false;
         sprite.color = Color.white;
     }
-
-    private void tiempoPartida()
+   
+    public void HacerInvulnerable()
     {
-        tiempoEmpleado = (int)(Time.time - tiempoInicio);
-
-        if (tiempoEmpleado > tiempoNivel) FinJuego();
+        esInvulnerable = true;
+        sprite.color = Color.red;
     }
-
-    public void contarPowerUps()
+    public bool EsInvulnerable()
     {
-        if (GameObject.FindGameObjectsWithTag("PowerUp").Length == 0) ganarJuego();
-    }
-
-    private void ganarJuego()
-    {
-        puntuacion = (nVidas * 100) + (tiempoNivel - tiempoEmpleado);
-        Debug.Log("Has ganado");
-    }
-
-    public void FinJuego()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void SiguienteNivel()
-    {
-        SceneManager.LoadScene(SceneManager.GetSceneAt(0).buildIndex);
+        return esInvulnerable;
     }
 }
 
