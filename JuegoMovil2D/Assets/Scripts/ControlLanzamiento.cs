@@ -9,8 +9,7 @@ public class ControlLanzamiento : MonoBehaviour
     public GameObject bola;
 
     private Camera camara;
-    private bool hasArrastrado;
-
+    private bool hasArrastrado,hasLanzado;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +26,11 @@ public class ControlLanzamiento : MonoBehaviour
         if (Touchscreen.current.primaryTouch.press.IsPressed()) EstaTocandoPantalla();
         else NoEstaTocando();
 
+    }
 
+    private void FixedUpdate()
+    {
+        ControlCamara.instance.ActualizarCamara(hasLanzado, bola);
     }
 
     private void EstaTocandoPantalla()
@@ -52,14 +55,11 @@ public class ControlLanzamiento : MonoBehaviour
 
             bola.transform.position = posicionMundo;
 
-            StopAllCoroutines();
+            camara.transform.position = new Vector3(0, 0, -10);
 
             //camara.transform.SetParent(null);
 
-            camara.transform.position = new Vector3(0, 0, -10);
-
-
-            hasArrastrado = true;
+            hasArrastrado = true;   
         }
 
     }
@@ -72,13 +72,12 @@ public class ControlLanzamiento : MonoBehaviour
 
         if (hasArrastrado)
         {
+            hasLanzado = true;
+
             Invoke("Lanzar", 0.1f);
             bola.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            StartCoroutine(ControlCamara.instance.CamaraBola(bola));
-
 
         }
-
 
         hasArrastrado = false;
     }
@@ -89,12 +88,12 @@ public class ControlLanzamiento : MonoBehaviour
 
         ControlUI.instance.setIntentos(ControlDatosJuego.instance.nIntentos);
 
-
         ControlDatosJuego.instance.nIntentos--;
 
         //ControlDatosJuego.instance.CancelarFinJuego();
 
     }
+
 
 
 }

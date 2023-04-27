@@ -4,29 +4,40 @@ using UnityEngine;
 
 public class ControlCamara : MonoBehaviour
 {
+    public bool esLejano;
 
     public static ControlCamara instance;
 
     private Camera camara;
 
-
     private void Awake()
     {
         instance = this;
+        camara = Camera.main;
     }
 
     void Start()
     {
-        camara = Camera.main; 
+        Debug.Log(esLejano);
+        if (esLejano == true) CamaraInicio();
     }
-
-    // Update is called once per frame
-    public IEnumerator CamaraBola(GameObject b)
+    public void ActualizarCamara(bool aux, GameObject b) 
     {
-        yield return new WaitForSeconds(0.01f);
-        camara.transform.position = b.transform.position + (Vector3.up) + transform.forward * -10;
 
-        CamaraBola(b);
+        if (aux)
+        {
+            Vector3 miPosicion = new Vector3(b.transform.position.x, b.transform.position.y, camara.transform.position.z);
+            camara.transform.position = miPosicion;
+        }
 
     }
+
+    private void CamaraInicio()
+    {
+        camara.transform.position = Vector3.MoveTowards(camara.transform.position, new Vector3(0,0,camara.transform.position.z), 7 * Time.deltaTime);
+        Debug.Log(camara.transform.position);
+
+
+    }
+
 }

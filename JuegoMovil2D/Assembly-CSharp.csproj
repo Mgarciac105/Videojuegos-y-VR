@@ -60,10 +60,10 @@
     <Compile Include="Assets\Scripts\ControlDatosJuego.cs" />
     <Compile Include="Assets\Scripts\ContarBolos.cs" />
     <Compile Include="Assets\Scripts\ControlUI.cs" />
+    <Compile Include="Assets\Scripts\ControlCamara.cs" />
     <Compile Include="Assets\Scripts\ControlPublicidad.cs" />
     <Compile Include="Assets\Scripts\ControlFinNivel.cs" />
     <Compile Include="Assets\Scripts\ControlBotones.cs" />
-    <Compile Include="Assets\Scripts\ControlCamara.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
