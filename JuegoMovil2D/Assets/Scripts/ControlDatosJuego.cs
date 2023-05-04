@@ -57,7 +57,7 @@ public class ControlDatosJuego : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name != "FinNivel" && SceneManager.GetActiveScene().name != "Menu" && SceneManager.GetActiveScene().name != "Creditos")
         {
-            TiempoPartida();
+            if(ControlCamara.instance.inicioNivel) TiempoPartida();
         }
 
 

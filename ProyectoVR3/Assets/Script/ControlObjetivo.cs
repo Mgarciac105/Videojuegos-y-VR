@@ -52,8 +52,9 @@ public class ControlObjetivo : MonoBehaviour
         }
     }
 
-    public void Acierto(GameObject g)
+    public IEnumerator Acierto(GameObject g)
     {
+        yield return new WaitForSeconds(0.3f);
         g.GetComponent<Animation>().Play("ObjetivoDisparoAbajo");
         StartCoroutine(Levantar(g));
     }

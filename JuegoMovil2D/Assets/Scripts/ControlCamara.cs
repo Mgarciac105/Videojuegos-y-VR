@@ -5,9 +5,10 @@ using UnityEngine;
 public class ControlCamara : MonoBehaviour
 {
     public bool esLejano;
+    public bool inicioNivel;
 
     public static ControlCamara instance;
-
+    
     private Camera camara;
 
     private void Awake()
@@ -16,10 +17,12 @@ public class ControlCamara : MonoBehaviour
         camara = Camera.main;
     }
 
-    void Start()
+
+    private void FixedUpdate()
     {
-        Debug.Log(esLejano);
-        if (esLejano == true) CamaraInicio();
+        if (esLejano) CamaraInicio();
+        else inicioNivel = true;
+
     }
     public void ActualizarCamara(bool aux, GameObject b) 
     {
@@ -34,8 +37,11 @@ public class ControlCamara : MonoBehaviour
 
     private void CamaraInicio()
     {
+
         camara.transform.position = Vector3.MoveTowards(camara.transform.position, new Vector3(0,0,camara.transform.position.z), 7 * Time.deltaTime);
-        Debug.Log(camara.transform.position);
+
+        if(camara.transform.position == new Vector3(0, 0, camara.transform.position.z)) inicioNivel = true;
+
 
 
     }

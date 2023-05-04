@@ -34,7 +34,7 @@ public class Shoot : MonoBehaviour
                         if (hit.collider.tag == "Objetivo")
                         {
 
-                            ControlObjetivo.instance.Acierto(hit.collider.gameObject.transform.parent.gameObject);
+                           StartCoroutine(ControlObjetivo.instance.Acierto(hit.collider.gameObject.transform.parent.gameObject));
 
                         }
           
