@@ -17,13 +17,4 @@ public class ContarBolos : MonoBehaviour
         }
     }
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Bolo"))
-    //    {
-    //        ControlDatosJuego.instance.DecrementarPuntuacion();
-
-    //    }
-    //}
-
 }

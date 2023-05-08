@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 552167614490989141}
   - component: {fileID: 6595575441134139641}
   - component: {fileID: 2181352706126299426}
-  - component: {fileID: 8091864221532335686}
+  - component: {fileID: 2183110050238913052}
   m_Layer: 0
   m_Name: Bolo
   m_TagString: Bolo
@@ -228,7 +228,7 @@ PolygonCollider2D:
       - {x: 0.08432054, y: -0.98342085}
       - {x: 0.11081109, y: -0.98303205}
       - {x: 0.13142857, y: -0.9771429}
---- !u!114 &8091864221532335686
+--- !u!114 &2183110050238913052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,6 +237,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298404595948304075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6d51107621ade4db213403ed1cd7e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ac0bbe6f9d8ad64e9a29cf5a94f90f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

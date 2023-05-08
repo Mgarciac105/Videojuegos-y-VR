@@ -16,10 +16,10 @@ public class ControlPlataformas : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-
 
         posicionInicio = transform.position;
         movimientoHaciaFin = true;
@@ -29,8 +29,9 @@ public class ControlPlataformas : MonoBehaviour
     void Update()
     {
 
-        MoverPlataforma();
-        
+            MoverPlataforma();
+
+
     }
 
     private void MoverPlataforma()
@@ -50,6 +51,4 @@ public class ControlPlataformas : MonoBehaviour
 
         }
     }
-
-
 }
