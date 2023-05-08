@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DatosJuego
   - Bolo
+  - Bola
   layers:
   - Default
   - TransparentFX

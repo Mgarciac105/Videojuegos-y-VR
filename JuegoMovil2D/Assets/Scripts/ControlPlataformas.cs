@@ -52,4 +52,14 @@ public class ControlPlataformas : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bolo"))
+        {
+            collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            collision.transform.parent = transform;
+
+        }
+    }
+
 }
