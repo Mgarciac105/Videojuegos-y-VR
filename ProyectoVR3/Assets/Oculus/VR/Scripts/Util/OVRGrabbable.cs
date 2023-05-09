@@ -20,6 +20,7 @@
 
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// An object that can be grabbed and thrown by OVRGrabber.
@@ -41,6 +42,10 @@ public class OVRGrabbable : MonoBehaviour
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
 
+    public float throwForce;
+
+    List<Vector3> _trackedPositions = new List<Vector3>();
+    bool _isHeld;
 	/// <summary>
 	/// If true, the object can currently be grabbed.
 	/// </summary>
@@ -121,6 +126,9 @@ public class OVRGrabbable : MonoBehaviour
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        _trackedPositions.Clear();
+        _isHeld = true;
     }
 
 	/// <summary>
@@ -134,6 +142,13 @@ public class OVRGrabbable : MonoBehaviour
         rb.angularVelocity = angularVelocity;
         m_grabbedBy = null;
         m_grabbedCollider = null;
+
+        Vector3 direction = _trackedPositions[_trackedPositions.Count - 1] - _trackedPositions[0];
+
+        GetComponent<Rigidbody>().AddForce(direction * throwForce);
+
+        _isHeld = false;
+
     }
 
     void Awake()
@@ -157,6 +172,17 @@ public class OVRGrabbable : MonoBehaviour
         m_grabbedKinematic = GetComponent<Rigidbody>().isKinematic;
     }
 
+    private void Update()
+    {
+        if (_isHeld)
+        {
+            if(_trackedPositions.Count > 15)
+            {
+                _trackedPositions.RemoveAt(0);
+            }
+            _trackedPositions.Add(transform.position);
+        }
+    }
     void OnDestroy()
     {
         if (m_grabbedBy != null)
