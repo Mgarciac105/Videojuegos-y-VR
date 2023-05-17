@@ -7,14 +7,15 @@ public class GeneracionMapa : MonoBehaviour
 
     public int width, height, depth;
 
-    public GameObject tierra, agua, montaña,tierraArbol,tierraCesped;
+    public GameObject tierra, agua, montaña,arbol,tierraCesped;
 
     public int seed;
     public float detail;
+    public int nArboles;
 
     private int[,] perlinNoiseArray;
 
-    private int min, max, rand;
+    private int min, max, rand,contadorArboles;
 
     void Start()
     {
@@ -87,5 +88,9 @@ public class GeneracionMapa : MonoBehaviour
             }
         }
     }
-        
+      
+    void GenerarArboles()
+    {
+
+    }
 }

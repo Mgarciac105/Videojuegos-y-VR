@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 4ba0aace50e4e944da5501bb423594cb
+  - enabled: 1
+    path: Assets/Scenes/Escena_1_PistolaObjetivos.unity
+    guid: 0e613487b311adc4792b596606771a7c
+  - enabled: 1
+    path: Assets/Scenes/Escena_3_Basket.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9788a1b00e4eb0a40b84ec8266a2fb1c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4d5d9713f68966d4c835cc5a6f2184b6, type: 2}

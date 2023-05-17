@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   esLejano: 0
+  inicioNivel: 0
 --- !u!1001 &556879532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1183,7 +1184,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: '00
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e7352b25045b144f9405a237c440e96, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 7e7352b25045b144f9405a237c440e96, type: 2}
