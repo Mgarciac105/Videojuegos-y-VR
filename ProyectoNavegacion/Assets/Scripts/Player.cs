@@ -8,10 +8,13 @@ public class Player : MonoBehaviour
     public Transform routeFather;
     int indexChildren;
     Vector3 destination;
+    public Vector3 min,max;
+
 
     private void Start()
     {
-        destination = routeFather.GetChild(indexChildren).position;
+        //destination = routeFather.GetChild(indexChildren).position;+
+        destination = RandomDestination();
         GetComponent<NavMeshAgent>().SetDestination(destination);
     }
 
@@ -28,9 +31,12 @@ public class Player : MonoBehaviour
             //    indexChildren = 0;
             //}
 
-            indexChildren = Random.Range(0, routeFather.childCount);
+            //indexChildren = Random.Range(0, routeFather.childCount);
 
-            destination = routeFather.GetChild(indexChildren).position;
+            //destination = routeFather.GetChild(indexChildren).position;
+            //GetComponent<NavMeshAgent>().SetDestination(destination);
+
+            destination = RandomDestination();
             GetComponent<NavMeshAgent>().SetDestination(destination);
         }
 
@@ -45,5 +51,10 @@ public class Player : MonoBehaviour
         //        GetComponent<NavMeshAgent>().SetDestination(hit.point);
         //    }
         //}
+    }
+
+    Vector3 RandomDestination()
+    {
+        return new Vector3(Random.Range(min.x, max.x), 0, Random.Range(min.z, max.z));
     }
 }

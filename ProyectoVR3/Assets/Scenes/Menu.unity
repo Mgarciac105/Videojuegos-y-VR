@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5738220291114067145, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: escena
-      value: Escena_1_PistolaObjetivos
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
@@ -463,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5738220291114067145, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: escena
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
@@ -605,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5738220291114067145, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: escena
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
