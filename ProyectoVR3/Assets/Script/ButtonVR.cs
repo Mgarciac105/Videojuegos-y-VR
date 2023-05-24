@@ -12,11 +12,34 @@ public class ButtonVR : MonoBehaviour
     GameObject presser;
     bool isPressed;
     public GameObject obj;
+    public GameObject[] objEscena;
+    
+    private List<Vector3> posicionInicial=new List<Vector3>();
+    private List<Quaternion> rotacionInicial = new List<Quaternion>();
+    private List<Objetos> lista = new List<Objetos>();
+    public Vector3[] test;
 
-    private GameObject objEscena;
     void Start()
     {
         isPressed = false;
+
+        Debug.Log("Cuenta"+objEscena.Length);
+
+        //posicionInicial = objEscena.transform.position;
+        //rotacionInicial = objEscena.transform.rotation;
+
+        for (int i = 0; i < objEscena.Length; i++)
+        {
+            Debug.Log("objeto " + objEscena[i]+" "+i);
+
+            var miObjeto = new Objetos();
+            miObjeto.Index = i;
+            miObjeto.Transform = objEscena[i].transform.position;
+            miObjeto.Rotation = objEscena[i].transform.rotation;
+            lista.Add(miObjeto);
+        }
+
+
     }
 
     // Update is called once per frame
@@ -47,9 +70,32 @@ public class ButtonVR : MonoBehaviour
     public void RespawnObj()
     {
 
-        Destroy(GameObject.FindGameObjectWithTag("ObjetoUsable"));
+        if (GameObject.Find("Pistola"))
+        {
+            Destroy(GameObject.Find("Pistola"));
+        }else if(GameObject.FindGameObjectsWithTag("Balon") != null)
+        {
+            foreach(GameObject go in GameObject.FindGameObjectsWithTag("Balon"))
+            {
+                Destroy(go);
+            }
+        }
 
-        Instantiate(obj, new Vector3(-0.956f,1.25f,-0.78f), Quaternion.Euler(0,180,-90));
+        //Instantiate(obj, posicionInicial, rotacionInicial);
+
+        lista.ForEach(item =>
+        {
+            Instantiate(obj, item.Transform, item.Rotation);
+        });
+
+
 
     }
+}
+
+public class Objetos
+{
+    public int Index;
+    public Vector3 Transform;
+    public Quaternion Rotation;
 }

@@ -473,7 +473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8939142057981781769, guid: ca49247e13d89d948b235ec3d78d5346, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8939142057981781769, guid: ca49247e13d89d948b235ec3d78d5346, type: 3}
       propertyPath: m_LocalPosition.x
@@ -749,7 +749,7 @@ RectTransform:
   m_Children:
   - {fileID: 1985308837}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1303,7 +1303,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8939142057981781769, guid: ca49247e13d89d948b235ec3d78d5346, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8939142057981781769, guid: ca49247e13d89d948b235ec3d78d5346, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1569,6 +1569,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_text
+      value: Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 5738220290805812424, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: m_Name
       value: PuertaEscena

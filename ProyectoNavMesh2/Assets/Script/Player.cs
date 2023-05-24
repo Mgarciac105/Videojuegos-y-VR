@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     Vector3 destination;
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
         if (Vector3.Distance(transform.position, destination) < 2.5f)
         {
- 
+
             destination = RandomDestination();
             GetComponent<NavMeshAgent>().SetDestination(destination);
         }

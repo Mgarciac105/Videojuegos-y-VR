@@ -558,7 +558,7 @@ RectTransform:
   m_Children:
   - {fileID: 1985308837}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -572,6 +572,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_text
+      value: Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 5738220290805812424, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: m_Name
       value: PuertaEscena

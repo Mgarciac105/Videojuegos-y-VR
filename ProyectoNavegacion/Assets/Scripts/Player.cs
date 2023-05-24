@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
 
 
-        if (Vector3.Distance(transform.position, destination) < 1.5f)
+        if (Vector3.Distance(transform.position, destination) < 2.5f)
         {
             //indexChildren++;
             //if(indexChildren >= routeFather.childCount)

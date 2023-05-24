@@ -321,6 +321,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_text
+      value: Basketball
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5738220290805812424, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: m_Name
       value: PuertaEscena (2)
@@ -413,6 +421,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_text
+      value: Practica de tiro
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5738220290805812424, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: m_Name
       value: PuertaEscena (1)
@@ -555,6 +571,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_text
+      value: Lanzamiento contra objetos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856226909038511285, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5738220290805812424, guid: 868fcaf35f1773e42980e75b1305bbe9, type: 3}
       propertyPath: m_Name
       value: PuertaEscena

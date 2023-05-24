@@ -45,6 +45,13 @@ public class BotonBasket : MonoBehaviour
     public void StartGame()
     {
         obj.transform.rotation = Quaternion.Euler(0, 90, 6f);
+        int puntuacion = ControlPuntosBasket.instance.puntuacion;
+        puntuacion = 0;
+        ControlUI.instance.SetPuntuacion(puntuacion.ToString());
+
+
+
+
     }
 }
 
