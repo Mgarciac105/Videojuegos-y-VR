@@ -9,12 +9,12 @@ public class ControlCubo : MonoBehaviour
     void Start()
     {
 
-            if (Physics.Raycast(transform.position, transform.up))
-            {
-                Destroy(this.gameObject);
-                //this.gameObject.SetActive(false);
-            }
-        
+        if (Physics.Raycast(transform.position, transform.up))
+        {
+            Destroy(this.gameObject);
+        //this.gameObject.SetActive(false);
+        }
+
 
     }
 }

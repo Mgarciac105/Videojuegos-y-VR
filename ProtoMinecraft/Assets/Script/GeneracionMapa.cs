@@ -7,7 +7,7 @@ public class GeneracionMapa : MonoBehaviour
 
     public int width, height, depth;
 
-    public GameObject tierra, agua, montaña,arbol,tierraCesped;
+    public GameObject tierra, agua, montaña,tierraCesped,arbol;
 
     public int seed;
     public float detail;
@@ -15,14 +15,16 @@ public class GeneracionMapa : MonoBehaviour
 
     private int[,] perlinNoiseArray;
 
-    private int min, max, rand,contadorArboles;
+    private int min, max, rand,contadorArboles = 0;
 
     void Start()
     {
         perlinNoiseArray = new int[width,depth];
 
         GenerarPerlinNoise();
+        GenerarArboles();   
         GenerarMapa();
+        Invoke("ColocarArboles",0.5f);   
     }
 
     // Update is called once per frame
@@ -59,7 +61,6 @@ public class GeneracionMapa : MonoBehaviour
                             Instantiate(tierraCesped, new Vector3(x, y, z), Quaternion.identity);
 
                         }
-
                         else Instantiate(tierra, new Vector3(x, y, z), Quaternion.identity);
                     }
 
@@ -88,9 +89,34 @@ public class GeneracionMapa : MonoBehaviour
             }
         }
     }
-      
-    void GenerarArboles()
+     void GenerarArboles()
     {
 
+
+        for(int i = 0; i < nArboles; i++)
+        {
+                Instantiate(arbol, new Vector3(0,0,0), Quaternion.identity);
+        }
+
+    }
+
+    void ColocarArboles()
+    {
+        GameObject[] arboles = GameObject.FindGameObjectsWithTag("Arbol");
+        GameObject[] tierras = GameObject.FindGameObjectsWithTag("Tierra");
+
+
+        for(int i = 0; i < tierras.Length; i++)
+        {
+
+            int rand = Random.Range(0,100);
+
+            if(rand >=45 && rand <= 50 && tierras[i].transform.position.y > min + 2 && tierras[i].transform.position.y < max - 6 && contadorArboles < arboles.Length)
+            {
+                arboles[contadorArboles].transform.SetParent(tierras[i].transform);
+                arboles[contadorArboles].transform.position=new Vector3(tierras[i].transform.position.x, tierras[i].transform.position.y + 0.5f, tierras[i].transform.position.z);
+                contadorArboles++;
+            }
+        }
     }
 }
