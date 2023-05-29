@@ -250,7 +250,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: O:/Videojuegos/FirmaUnitykeystore.keystore
+  AndroidKeystoreName: C:/Users/videojuegos/Desktop/videojuegos/FirmaUnitykeystore.keystore
   AndroidKeyaliasName: mgarciac
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0

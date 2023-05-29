@@ -1,3 +1,25 @@
+buildscript {
+repositories {
+google()
+mavenCentral()
+}
+dependencies {
+// Must be Android Gradle Plugin 3.6.0 or later. For a list of
+// compatible Gradle versions refer to:
+// https://developer.android.com/studio/releases/gradle-plugin
+classpath 'com.android.tools.build:gradle:3.6.0'
+}
+}
+
+allprojects {
+repositories {
+google()
+mavenCentral()
+flatDir {
+dirs 'libs'
+}
+}
+}
 apply plugin: 'com.android.application'
 
 dependencies {
@@ -54,6 +76,11 @@ android {
         }
         abi {
             enableSplit = true
+        }
+    }
+packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
         }
     }
 }**SPLITS_VERSION_CODE****LAUNCHER_SOURCE_BUILD_SETUP**
