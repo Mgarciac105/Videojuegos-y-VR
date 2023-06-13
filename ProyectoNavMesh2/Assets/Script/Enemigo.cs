@@ -17,7 +17,7 @@ public class Enemigo : MonoBehaviour
         posicionPlayer = player.transform.position;
         GetComponent<NavMeshAgent>().SetDestination(posicionPlayer);
 
-        if (Vector3.Distance(transform.position, posicionPlayer) < 2.5f)
+        if (Vector3.Distance(transform.position, posicionPlayer) < 1f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
